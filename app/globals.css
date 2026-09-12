@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+/*
+  Tailwind v4 uses CSS-first theming (@theme) instead of tailwind.config.ts.
+  Every token below becomes a utility automatically:
+  --color-navy -> bg-navy / text-navy / border-navy, etc.
+*/
+@theme {
+  /* Deep sea blue — the site's structural dark base */
+  --color-navy-950: #041c2c;
+  --color-navy-900: #0a3d62;
+  --color-navy-800: #0f527f;
+  --color-navy-700: #15699e;
+  --color-navy: #0a3d62;
+
+  /* Warm gold — from the poster's "SUNDAY" yellow (replaces the former brown) */
+  --color-brown-900: #5c3d05;
+  --color-brown-700: #96660a;
+  --color-brown-500: #c9962c;
+  --color-brown-300: #f0c869;
+  --color-brown: #c9962c;
+
+  /* Raspberry pink — from the poster's magenta gradient */
+  --color-slate: #d6336c;
+  --color-slate-light: #f06595;
+
+  /* Bright sky blue — from the poster's logo mark and sky backdrop */
+  --color-sky: #1e88e5;
+  --color-sky-light: #6ab8f7;
+
+  --color-cream: #fdf8f3;
+  --color-sand: #f5ece1;
+  --color-sand-dark: #e8dcc8;
+
+  --font-sans: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+
+  --animate-marquee: marquee 28s linear infinite;
+  --animate-fade-up: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(1.5rem); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-navy-900);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: var(--color-brown-500);
+  color: var(--color-cream);
+}
+
+/* Subtle film-grain overlay used behind dark hero/CTA sections */
+.grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Thin custom scrollbar to match the editorial tone */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-brown-300);
+  border-radius: 999px;
+}
