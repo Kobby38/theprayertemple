@@ -23,8 +23,7 @@ export const ewmMeeting = {
 
 export const midnightCryMeeting = {
   schedule: "Mondays, 11:45 PM BST · 10:45 PM GMT",
-  // TODO: replace with the real recurring Zoom meeting link.
-  zoomLink: "https://zoom.us/j/PLACEHOLDER",
+  zoomLink: ewmMeeting.zoomLink,
 };
 
 export const vision = {
