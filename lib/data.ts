@@ -18,7 +18,7 @@ export const siteConfig = {
 };
 
 export const gettingHere = {
-  buses: ["161", "177", "180", "472"],
+  buses: ["161", "177", "180", "380"],
   trainStation: "Woolwich Dockyard",
   dlrStation: "Woolwich Arsenal",
 };
