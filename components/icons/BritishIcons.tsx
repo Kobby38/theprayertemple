@@ -1,6 +1,3 @@
-Here's the full `components/icons/BritishIcons.tsx` content — remember to create it from the **repo root** (not from inside a folder), filename box: `components/icons/BritishIcons.tsx`:
-
-```tsx
 type IconProps = {
   size?: number;
   className?: string;
@@ -98,4 +95,3 @@ export function PostboxIcon({ size = 20, className }: IconProps) {
     </svg>
   );
 }
-```
