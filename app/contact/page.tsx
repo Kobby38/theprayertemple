@@ -1,8 +1,15 @@
 import type { Metadata } from "next";
-import { Bus, Clock, Mail, MapPin, Navigation, Phone, TrainFront } from "lucide-react";
+import Image from "next/image";
+import { Mail, Navigation } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
 import { ContactForm } from "@/components/ContactForm";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { BusRoundelIcon, DlrRoundelIcon } from "@/components/icons/TransportIcons";
+import {
+  BigBenClockIcon,
+  BigBenTowerIcon,
+  PhoneBoxIcon,
+} from "@/components/icons/BritishIcons";
 import { gettingHere, siteConfig } from "@/lib/data";
 
 export const metadata: Metadata = {
@@ -11,8 +18,8 @@ export const metadata: Metadata = {
 };
 
 const details = [
-  { icon: MapPin, label: "Address", value: siteConfig.address },
-  { icon: Phone, label: "Phone", value: siteConfig.phone },
+  { icon: BigBenTowerIcon, label: "Address", value: siteConfig.address },
+  { icon: PhoneBoxIcon, label: "Phone", value: siteConfig.phone },
   { icon: Mail, label: "Email", value: siteConfig.email },
 ];
 
@@ -31,8 +38,8 @@ export default function ContactPage() {
             <div className="space-y-8">
               {details.map((d) => (
                 <div key={d.label} className="flex items-start gap-4">
-                  <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-navy-900 text-brown-300">
-                    <d.icon size={18} />
+                  <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full border border-navy-900/10 bg-white shadow-sm">
+                    <d.icon size={22} />
                   </div>
                   <div>
                     <p className="text-xs font-bold uppercase tracking-widest text-navy-900/50">
@@ -55,8 +62,8 @@ export default function ContactPage() {
                 </div>
               ))}
               <div className="flex items-start gap-4">
-                <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-navy-900 text-brown-300">
-                  <Clock size={18} />
+                <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full border border-navy-900/10 bg-white shadow-sm">
+                  <BigBenClockIcon size={22} />
                 </div>
                 <div>
                   <p className="text-xs font-bold uppercase tracking-widest text-navy-900/50">
@@ -74,8 +81,8 @@ export default function ContactPage() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-navy-900 text-brown-300">
-                  <Bus size={18} />
+                <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full border border-navy-900/10 bg-white shadow-sm">
+                  <BusRoundelIcon size={22} />
                 </div>
                 <div>
                   <p className="text-xs font-bold uppercase tracking-widest text-navy-900/50">
@@ -88,18 +95,34 @@ export default function ContactPage() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-navy-900 text-brown-300">
-                  <TrainFront size={18} />
+                <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full border border-navy-900/10 bg-white shadow-sm">
+                  <Image
+                    src="/images/national-rail-logo.webp"
+                    alt="National Rail"
+                    width={22}
+                    height={13}
+                  />
                 </div>
                 <div>
                   <p className="text-xs font-bold uppercase tracking-widest text-navy-900/50">
-                    Nearest Stations
+                    Nearest Train Station
                   </p>
                   <p className="mt-1 text-base font-medium text-navy-900">
-                    {gettingHere.trainStation} (train)
+                    {gettingHere.trainStation}
                   </p>
-                  <p className="text-base font-medium text-navy-900">
-                    {gettingHere.dlrStation} (DLR)
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full border border-navy-900/10 bg-white shadow-sm">
+                  <DlrRoundelIcon size={22} />
+                </div>
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-widest text-navy-900/50">
+                    Nearest DLR Station
+                  </p>
+                  <p className="mt-1 text-base font-medium text-navy-900">
+                    {gettingHere.dlrStation}
                   </p>
                 </div>
               </div>
