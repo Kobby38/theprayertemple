@@ -7,7 +7,7 @@ export const siteConfig = {
   address: "Clock House Community Centre, Defiance Walk, London, SE18 5QL",
   mapsLink: "https://maps.app.goo.gl/edknDF74rhMPP7TBA?g_st=am",
   phone: "+44 7486 015881",
-  email: "hello@theprayertemple.org",
+  email: "theprayertemplelondon@gmail.com",
   serviceTimes: [{ label: "Sunday Service", time: "2:00 PM" }],
   social: {
     instagram: "https://instagram.com",
