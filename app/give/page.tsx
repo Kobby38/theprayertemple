@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 const funds = [
   {
     icon: Building2,
-    title: "Tithes & General Fund",
+    title: "Tithes & Offering",
     body: "Sustains weekly ministry, staffing, and the day-to-day life of the church.",
   },
   {
