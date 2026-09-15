@@ -3,7 +3,6 @@ import Image from "next/image";
 import { Clock } from "lucide-react";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { Button } from "@/components/ui/Button";
 import { JoinZoomButton } from "@/components/JoinZoomButton";
 import { ewmMeeting } from "@/lib/data";
 
@@ -156,30 +155,6 @@ export default function EntrepreneurWomensMovementPage() {
               </ScrollReveal>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section className="relative overflow-hidden bg-navy-900 py-28 text-cream grain">
-        <div className="pointer-events-none absolute -right-32 top-0 h-96 w-96 rounded-full bg-brown-500/20 blur-[100px]" />
-        <div className="relative mx-auto max-w-4xl px-6 text-center lg:px-10">
-          <ScrollReveal>
-            <p className="text-xs font-bold uppercase tracking-[0.3em] text-brown-300">
-              Meets 2nd Saturday monthly · 10:00 AM
-            </p>
-            <h2 className="mt-4 text-balance text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl">
-              Come build with us.
-            </h2>
-            <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-cream/70">
-              No business experience required, just a willingness to grow.
-              Reach out and we&rsquo;ll get you connected before the next
-              gathering.
-            </p>
-            <div className="mt-10 flex justify-center">
-              <Button href="/contact" size="lg">
-                Join the movement
-              </Button>
-            </div>
-          </ScrollReveal>
         </div>
       </section>
     </>
