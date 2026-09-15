@@ -14,10 +14,6 @@ export const metadata: Metadata = {
 
 const charityPhotos = [
   {
-    src: "/images/charity/charity-01.jpg",
-    alt: "A father and mother with their baby at the community outreach event",
-  },
-  {
     src: "/images/charity/charity-02.jpg",
     alt: "Volunteers serving hot meals to the community",
   },
@@ -130,7 +126,7 @@ export default function EntrepreneurWomensMovementPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <SectionHeading
             eyebrow="Faith in action"
-            title="Charity in Pictures"
+            title="Community Outreach"
             align="center"
             className="mx-auto"
           />
