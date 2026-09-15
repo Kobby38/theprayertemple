@@ -13,6 +13,33 @@ export const metadata: Metadata = {
     "A faith-fueled community equipping women in business and ministry with mentorship, biblical financial wisdom, and practical tools to build kingdom enterprises.",
 };
 
+const charityPhotos = [
+  {
+    src: "/images/charity/charity-01.jpg",
+    alt: "A father and mother with their baby at the community outreach event",
+  },
+  {
+    src: "/images/charity/charity-02.jpg",
+    alt: "Volunteers serving hot meals to the community",
+  },
+  {
+    src: "/images/charity/charity-03.jpg",
+    alt: "A mother holding her baby at the outreach event",
+  },
+  {
+    src: "/images/charity/charity-04.jpg",
+    alt: "Children and volunteers gathered together at the outreach event",
+  },
+  {
+    src: "/images/charity/charity-05.jpg",
+    alt: "A care package of household and food essentials for families",
+  },
+  {
+    src: "/images/charity/charity-06.jpg",
+    alt: "Care packages prepared for families in the community",
+  },
+];
+
 export default function EntrepreneurWomensMovementPage() {
   return (
     <>
@@ -97,6 +124,38 @@ export default function EntrepreneurWomensMovementPage() {
               />
             </div>
           </ScrollReveal>
+        </div>
+      </section>
+
+      <section className="bg-cream py-28">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10">
+          <SectionHeading
+            eyebrow="Faith in action"
+            title="Charity in Pictures"
+            align="center"
+            className="mx-auto"
+          />
+          <p className="mx-auto mt-6 max-w-2xl text-center text-lg leading-relaxed text-navy-900/70">
+            A glimpse into our community outreach, where the movement puts
+            love into action through shared meals, care packages, and time
+            given to families and children.
+          </p>
+          <div className="mt-14 columns-1 gap-4 sm:columns-2 lg:columns-3">
+            {charityPhotos.map((photo, i) => (
+              <ScrollReveal key={photo.src} delay={i * 0.08} className="mb-4 break-inside-avoid">
+                <div className="group relative overflow-hidden rounded-2xl">
+                  <Image
+                    src={photo.src}
+                    alt={photo.alt}
+                    width={800}
+                    height={800}
+                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                    className="w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
         </div>
       </section>
 
