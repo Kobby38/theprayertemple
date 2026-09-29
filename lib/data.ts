@@ -11,7 +11,7 @@ export const siteConfig = {
   serviceTimes: [{ label: "Sunday Service", time: "2:00 PM" }],
   social: {
     instagram: "https://instagram.com",
-    youtube: "https://youtube.com",
+    youtube: "https://youtube.com/@ewmmidnightcry-sz1dj",
     facebook: "https://facebook.com",
     tiktok: "https://tiktok.com",
   },
