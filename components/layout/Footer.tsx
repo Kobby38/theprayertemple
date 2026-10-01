@@ -10,7 +10,7 @@ const socialLinks = [
 
 const quickLinks = [
   { href: "/about", label: "About" },
-  { href: "/sermons", label: "Sermons" },
+  { href: "/sermons", label: "Recordings" },
   { href: "/events", label: "Events" },
 ];
 
