@@ -148,7 +148,7 @@ export const testimonials: Testimonial[] = [
     quote:
       "The Prayer Temple didn't just give me a church to attend. It gave me a family that prayed with me until I saw the breakthrough.",
     name: "Adjoa Mensah",
-    role: "Founding member",
+    role: "Member since 2026",
   },
   {
     quote:
@@ -158,8 +158,8 @@ export const testimonials: Testimonial[] = [
   },
   {
     quote:
-      "The teaching here is deep, practical, and Christ-centered. I've grown so much since joining this year.",
-    name: "Daniel Ofori",
-    role: "Member since 2026",
+      "The prayers during Midnight Cry have transformed me.",
+    name: "Kwabena Opoku",
+    role: "Midnight Cry",
   },
 ];
