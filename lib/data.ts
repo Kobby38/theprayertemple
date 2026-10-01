@@ -1,4 +1,4 @@
-import type { ChurchEvent, Leader, Sermon, Testimonial } from "@/types";
+import type { ChurchEvent, Leader, Testimonial } from "@/types";
 
 export const siteConfig = {
   name: "The Prayer Temple",
@@ -12,6 +12,8 @@ export const siteConfig = {
   social: {
     instagram: "https://www.instagram.com/?deoia=1",
     youtube: "https://youtube.com/@ewmmidnightcry-sz1dj",
+    facebook: "https://facebook.com",
+    tiktok: "https://tiktok.com",
   },
 };
 
@@ -115,21 +117,6 @@ export const founderProfile = {
     "Know God. Discover who you are. Activate what God has placed inside you. Walk in your purpose. Become a blessing to your generation.",
   ],
 };
-
-export const sermons: Sermon[] = [
-  {
-    slug: "the-secret-place",
-    title: "The Secret Place",
-    speaker: "Prophetess Abena Hackman",
-    series: "Foundations",
-    date: "2026-08-16",
-    duration: "52 min",
-    youtubeId: "dQw4w9WgXcQ",
-    scripture: "Psalm 91:1–4",
-    summary:
-      "Why private, consistent prayer is the source of every public breakthrough.",
-  },
-];
 
 export const events: ChurchEvent[] = [
   {
