@@ -10,7 +10,7 @@ export const siteConfig = {
   email: "theprayertemplelondon@gmail.com",
   serviceTimes: [{ label: "Sunday Service", time: "2:00 PM" }],
   social: {
-    instagram: "https://www.instagram.com/?deoia=1",",
+    instagram: "https://www.instagram.com/?deoia=1",
     youtube: "https://youtube.com/@ewmmidnightcry-sz1dj",
   },
 };
