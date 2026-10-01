@@ -1,15 +1,3 @@
-export type Sermon = {
-  slug: string;
-  title: string;
-  speaker: string;
-  series: string;
-  date: string;
-  duration: string;
-  youtubeId: string;
-  scripture: string;
-  summary: string;
-};
-
 export type ChurchEvent = {
   slug: string;
   title: string;
