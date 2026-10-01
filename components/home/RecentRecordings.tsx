@@ -2,7 +2,6 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { RecordingCard } from "@/components/RecordingCard";
-import { siteConfig } from "@/lib/data";
 import { getRecentRecordings } from "@/lib/youtube";
 
 export async function RecentRecordings() {
@@ -16,9 +15,7 @@ export async function RecentRecordings() {
         <div className="flex flex-wrap items-end justify-between gap-6">
           <SectionHeading eyebrow="Catch up" title="Recent recordings." />
           <Link
-            href={siteConfig.social.youtube}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/sermons"
             className="group flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-navy-900"
           >
             All videos
