@@ -11,7 +11,7 @@ import { siteConfig } from "@/lib/data";
 
 const links = [
   { href: "/about", label: "About" },
-  { href: "/sermons", label: "Sermons" },
+  { href: "/sermons", label: "Recordings" },
   { href: "/events", label: "Events" },
   { href: "/entrepreneur-womens-movement", label: "Entrepreneur Women" },
   { href: "/midnight-cry", label: "Midnight Cry" },
