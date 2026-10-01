@@ -37,3 +37,10 @@ export type Testimonial = {
   name: string;
   role: string;
 };
+
+export type Recording = {
+  videoId: string;
+  title: string;
+  thumbnail: string;
+  publishedAt: string;
+};
