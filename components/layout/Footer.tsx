@@ -1,11 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
 import { siteConfig } from "@/lib/data";
+import { InstagramIcon, YoutubeIcon } from "@/components/icons/SocialIcons";
 
 const socialLinks = [
-  { href: siteConfig.social.instagram, label: "Instagram", abbr: "IG" },
-  { href: siteConfig.social.youtube, label: "YouTube", abbr: "YT" },
-  { href: siteConfig.social.facebook, label: "Facebook", abbr: "FB" },
+  { href: siteConfig.social.instagram, label: "Instagram", icon: InstagramIcon },
+  { href: siteConfig.social.youtube, label: "YouTube", icon: YoutubeIcon },
 ];
 
 const quickLinks = [
@@ -46,7 +46,7 @@ export function Footer() {
                   aria-label={s.label}
                   className="flex h-10 w-10 items-center justify-center rounded-full border border-cream/15 text-[11px] font-bold tracking-wide transition-colors hover:border-brown-300 hover:text-brown-300"
                 >
-                  {s.abbr}
+                  <s.icon size={20} />
                 </a>
               ))}
             </div>
