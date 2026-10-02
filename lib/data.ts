@@ -12,6 +12,8 @@ export const siteConfig = {
   social: {
     instagram: "https://www.instagram.com/the.prayertemple/",
     youtube: "https://youtube.com/@ewmmidnightcry-sz1dj",
+    facebook: "https://facebook.com",
+    tiktok: "https://tiktok.com",
   },
 };
 
@@ -120,26 +122,26 @@ export const events: ChurchEvent[] = [
   {
     slug: "uk-annual-conference",
     title: "UK Annual Conference",
-    date: "2027-06-01",
-    dateLabel: "Jun 2027",
+    date: "2027-06-18",
+    endDate: "2027-06-20",
     time: "To be announced",
-    location: "United Kingdom · Venue to be confirmed",
+    location: "Clock House Community Centre, Defiance Walk, London, SE18 5QL",
     category: "Conference",
-    summary: "Our first UK gathering of prayer, worship, and impartation. Date to be announced.",
+    summary: "Our first UK gathering of prayer, worship, and impartation.",
     details:
-      "Join us for the UK Annual Conference in June 2027. The exact date, venue, and full itinerary will be announced soon, so stay connected for updates.",
+      "Join us for the UK Annual Conference, June 18 to 20, 2027. The full itinerary will be announced soon, so stay connected for updates.",
   },
   {
     slug: "ghana-annual-residential-conference",
     title: "Ghana Annual Residential Conference 2027",
-    date: "2027-06-18",
-    endDate: "2027-06-20",
+    date: "2027-08-20",
+    endDate: "2027-08-21",
     time: "All day",
-    location: "Clock House Community Centre, Defiance Walk, London, SE18 5QL",
+    location: "New Mercies Retreat Centre",
     category: "Conference",
-    summary: "Three days of teaching, worship, and community together, away from the everyday.",
+    summary: "Two days of teaching, worship, and community together, away from the everyday.",
     details:
-      "Join us for our Ghana Annual Residential Conference, August 20 to 21, 2027. Full itinerary, venue, and accommodation details will follow closer to the date.",
+      "Join us for our Ghana Annual Residential Conference, August 20 to 21, 2027. Full itinerary and accommodation details will follow closer to the date.",
   },
 ];
 
@@ -158,8 +160,8 @@ export const testimonials: Testimonial[] = [
   },
   {
     quote:
-      "The prayers during Midnight Cry have transformed me.",
-    name: "Kwabena Opoku",
-    role: "Midnight Cry",
+      "The teaching here is deep, practical, and Christ-centered. I've grown so much since joining this year.",
+    name: "Daniel Ofori",
+    role: "Member since 2026",
   },
 ];
