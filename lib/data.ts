@@ -154,9 +154,10 @@ export const testimonials: Testimonial[] = [
   },
   {
     quote:
-      "Through the Entrepreneur Women's Movement I found the mentorship and courage to finally launch my business on a foundation of faith.",
-    name: "Yaa Asantewaa",
-    role: "Entrepreneur Women's Movement",
+      "I am always blessed when I join Midnight Cry, where believers gather to pray as the Spirit of God leads.",
+    name: "Dr Benedict Quagraine",
+    role: "Midnight Cry",
+    role: "Midnight Cry",
   },
   {
     quote:
