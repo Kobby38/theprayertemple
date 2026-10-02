@@ -132,12 +132,12 @@ export const events: ChurchEvent[] = [
   {
     slug: "ghana-annual-residential-conference",
     title: "Ghana Annual Residential Conference 2027",
-    date: "2027-08-20",
-    endDate: "2027-08-21",
+    date: "2027-06-18",
+    endDate: "2027-06-20",
     time: "All day",
-    location: "Location to be confirmed",
+    location: "Clock House Community Centre, Defiance Walk, London, SE18 5QL",
     category: "Conference",
-    summary: "Two days of teaching, worship, and community together, away from the everyday.",
+    summary: "Three days of teaching, worship, and community together, away from the everyday.",
     details:
       "Join us for our Ghana Annual Residential Conference, August 20 to 21, 2027. Full itinerary, venue, and accommodation details will follow closer to the date.",
   },
