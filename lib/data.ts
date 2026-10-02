@@ -157,7 +157,6 @@ export const testimonials: Testimonial[] = [
       "I am always blessed when I join Midnight Cry, where believers gather to pray as the Spirit of God leads.",
     name: "Dr Benedict Quagraine",
     role: "Midnight Cry",
-    role: "Midnight Cry",
   },
   {
     quote:
