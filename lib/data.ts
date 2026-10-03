@@ -135,7 +135,7 @@ export const events: ChurchEvent[] = [
     slug: "ghana-annual-residential-conference",
     title: "Ghana Annual Residential Conference 2027",
     date: "2027-08-20",
-    endDate: "2027-08-21",
+    endDate: "2027-08-22",
     time: "All day",
     location: "New Mercies Retreat Centre",
     category: "Conference",
@@ -148,8 +148,8 @@ export const events: ChurchEvent[] = [
 export const testimonials: Testimonial[] = [
   {
     quote:
-      "The Prayer Temple didn't just give me a church to attend. It gave me a family that prayed with me until I saw the breakthrough.",
-    name: "Adjoa Mensah",
+      "The Prayer Temple has provided me the opportunity to grow in my faith in ALMIGHTY GOD through the LORD JESUS CHRIST. I also experience the love of GOD balancing both in-person and online fellowship. The spirit of discipleship is kept alive no matter the distance.",
+    name: "Lady Lorraine",
     role: "Member since 2026",
   },
   {
