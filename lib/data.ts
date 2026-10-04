@@ -160,8 +160,8 @@ export const testimonials: Testimonial[] = [
   },
   {
     quote:
-      "The teaching here is deep, practical, and Christ-centered. I've grown so much since joining this year.",
-    name: "Daniel Ofori",
-    role: "Member since 2026",
+      "I would like to testify to the goodness, protection, and faithfulness of God through the prayers of Midnight Cry. Through these prayers, I experienced God's protection in a powerful and undeniable way. God saved me from an accident that could have had serious consequences. What could have ended in tragedy became a testimony of God's mercy, preservation, and divine protection. I believe the prayers offered during Midnight Cry played an important role in covering my life and standing in the gap for me. Indeed, the Word of God says, "The angel of the LORD encampeth round about them that fear him, and delivereth them" (Psalm 34:7). This experience has strengthened my faith and reminded me of the power of prayer. It has shown me that when we come together to seek God, He hears us. He is able to protect, preserve, deliver, and keep His people from danger. I give all the glory, honour, and praise to God for saving my life. I am grateful to God for Midnight Cry and for every woman who continues to stand in prayer, believing God for one another. This testimony is a reminder that prayer is not in vain. God hears. God answers. God protects. God delivers. Indeed, PRAYER WORKS, AND GOD IS FAITHFUL! To God be all the glory! AMEN! 🔥🙏🏽",
+    name: "Prophetess Favour",
+    role: "Midnight Cry",
   },
 ];
