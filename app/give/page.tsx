@@ -41,26 +41,25 @@ export default function GivePage() {
       <PageHero
         eyebrow="Generosity"
         title="Give with purpose."
-        highlight={["purpose."]}
         description="Every gift is stewarded to expand the reach of the Gospel through this house and beyond it."
       />
 
-      <section className="section bg-white">
-        <div className="wrap">
-          <SectionHeading
-            eyebrow="Where it goes"
-            title="Your giving at work."
-            highlight={["work."]}
-          />
-          <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-3">
+      <section className="bg-cream py-28">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10">
+          <SectionHeading eyebrow="Where it goes" title="Your giving at work." />
+          <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-3">
             {funds.map((f, i) => (
               <ScrollReveal key={f.title} delay={i * 0.1}>
-                <div className="h-full rounded-3xl bg-mist p-8 ring-1 ring-leaf/30">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-green-gradient text-gold-light">
-                    <f.icon size={24} />
+                <div className="h-full rounded-2xl border border-navy-900/8 bg-white p-8">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-navy-900 text-brown-300">
+                    <f.icon size={22} />
                   </div>
-                  <h3 className="mt-8 text-h4">{f.title}</h3>
-                  <p className="mt-3 text-ink-muted">{f.body}</p>
+                  <h3 className="mt-6 text-lg font-bold tracking-tight text-navy-900">
+                    {f.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-navy-900/60">
+                    {f.body}
+                  </p>
                 </div>
               </ScrollReveal>
             ))}
@@ -68,34 +67,29 @@ export default function GivePage() {
         </div>
       </section>
 
-      <section className="section relative overflow-hidden bg-green-gradient text-white grain">
-        <div
-          className="pointer-events-none absolute left-1/2 top-0 h-[34rem] w-[44rem] -translate-x-1/2 rounded-full bg-gold/20 blur-[130px]"
-          aria-hidden="true"
-        />
-        <div className="wrap relative max-w-5xl">
+      <section className="relative overflow-hidden bg-navy-900 py-28 text-cream grain">
+        <div className="pointer-events-none absolute left-1/2 top-0 h-96 w-[36rem] -translate-x-1/2 rounded-full bg-brown-500/20 blur-[110px]" />
+        <div className="pointer-events-none absolute -bottom-16 -left-16 h-64 w-64 rounded-full bg-sky/20 blur-[100px]" />
+        <div className="relative mx-auto max-w-5xl px-6 lg:px-10">
           <SectionHeading
             eyebrow="Ready to give?"
             title="Ways to give."
-            highlight={["give."]}
             align="center"
             light
+            className="mx-auto"
           />
 
-          <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2">
+          <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2">
             <ScrollReveal>
-              <div className="h-full rounded-3xl bg-white/5 p-8 ring-1 ring-white/15 backdrop-blur-sm">
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gold-gradient text-ink">
-                  <Landmark size={24} />
+              <div className="h-full rounded-2xl border border-cream/10 bg-cream/5 p-8">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brown-500 text-cream">
+                  <Landmark size={22} />
                 </div>
-                <h3 className="mt-8 text-h3">Bank transfer</h3>
-                <dl className="mt-6 space-y-4 text-sm">
+                <h3 className="mt-6 text-lg font-bold tracking-tight">Bank transfer</h3>
+                <dl className="mt-5 space-y-3 text-sm">
                   {bankDetails.map((d) => (
-                    <div
-                      key={d.label}
-                      className="flex items-center justify-between gap-4 border-b border-white/10 pb-4 last:border-none last:pb-0"
-                    >
-                      <dt className="text-white/50">{d.label}</dt>
+                    <div key={d.label} className="flex items-center justify-between gap-4 border-b border-cream/10 pb-3 last:border-none last:pb-0">
+                      <dt className="text-cream/50">{d.label}</dt>
                       <dd className="font-semibold">{d.value}</dd>
                     </div>
                   ))}
@@ -104,19 +98,19 @@ export default function GivePage() {
             </ScrollReveal>
 
             <ScrollReveal delay={0.1}>
-              <div className="h-full rounded-3xl bg-white/5 p-8 ring-1 ring-white/15 backdrop-blur-sm">
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gold-gradient text-ink">
-                  <Wallet size={24} />
+              <div className="h-full rounded-2xl border border-cream/10 bg-cream/5 p-8">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brown-500 text-cream">
+                  <Wallet size={22} />
                 </div>
-                <h3 className="mt-8 text-h3">PayPal</h3>
-                <dl className="mt-6 space-y-4 text-sm">
-                  <div className="flex items-center justify-between gap-4 border-b border-white/10 pb-4">
-                    <dt className="text-white/50">Name</dt>
+                <h3 className="mt-6 text-lg font-bold tracking-tight">PayPal</h3>
+                <dl className="mt-5 space-y-3 text-sm">
+                  <div className="flex items-center justify-between gap-4 border-b border-cream/10 pb-3">
+                    <dt className="text-cream/50">Name</dt>
                     <dd className="font-semibold">Abena Hackman</dd>
                   </div>
                   <div className="flex items-center justify-between gap-4">
-                    <dt className="text-white/50">Email</dt>
-                    <dd className="break-all font-semibold">babyjetsmile@gmail.com</dd>
+                    <dt className="text-cream/50">Email</dt>
+                    <dd className="font-semibold">babyjetsmile@gmail.com</dd>
                   </div>
                 </dl>
               </div>
@@ -124,11 +118,11 @@ export default function GivePage() {
           </div>
 
           <ScrollReveal delay={0.2}>
-            <p className="mx-auto mt-12 max-w-xl text-center text-white/60">
+            <p className="mx-auto mt-10 max-w-xl text-center text-sm leading-relaxed text-cream/60">
               Prefer to give in person, or need a receipt? We&rsquo;re happy to help.
             </p>
-            <div className="mt-8 flex justify-center">
-              <Button href="/contact" size="lg" arrow>
+            <div className="mt-6 flex justify-center">
+              <Button href="/contact" size="lg">
                 Contact us
               </Button>
             </div>

@@ -5,7 +5,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Button } from "@/components/ui/Button";
+import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { siteConfig } from "@/lib/data";
 
@@ -31,150 +31,112 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : "";
-    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
-    window.addEventListener("keydown", onKey);
-    return () => {
-      window.removeEventListener("keydown", onKey);
-      document.body.style.overflow = "";
-    };
-  }, [open]);
-
   if (pathname !== lastPathname) {
     setLastPathname(pathname);
     setOpen(false);
   }
 
   const light = !scrolled && !open;
-  const isActive = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
+  const isHome = pathname === "/";
 
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-[background-color,border-color,padding] duration-500",
-        scrolled && !open
-          ? "border-b border-gold/30 bg-white/85 py-3 backdrop-blur-xl"
-          : "border-b border-transparent py-5"
+        "fixed inset-x-0 top-0 z-50 transition-all duration-500",
+        scrolled || open
+          ? "bg-cream/90 backdrop-blur-md shadow-[0_1px_0_0_rgba(11,37,69,0.08)]"
+          : isHome
+            ? "border-b border-brown-300/20 bg-brown-500/15 backdrop-blur-md"
+            : "border-b border-cream/15 bg-transparent"
       )}
     >
-      <nav className="wrap flex items-center justify-between gap-8" aria-label="Main">
-        <Link href="/" className="relative z-10 flex items-center" aria-label={siteConfig.name}>
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-10">
+        <Link href="/" className="flex items-center" aria-label={siteConfig.name}>
           <Image
             src="/images/prayer-temple-logo.webp"
             alt={siteConfig.name}
             width={540}
             height={360}
             priority
-            className="h-14 w-auto md:h-16"
+            className="h-14 w-auto"
           />
         </Link>
 
-        <ul className="hidden items-center lg:flex">
-          {links.map((link) => (
-            <li key={link.href}>
+        <nav className="hidden lg:flex items-center gap-8">
+          {links.map((link) => {
+            const active = pathname === link.href;
+            return (
               <Link
+                key={link.href}
                 href={link.href}
-                aria-current={isActive(link.href) ? "page" : undefined}
                 className={cn(
-                  "relative whitespace-nowrap px-3 py-2 text-[0.9rem] font-medium transition-colors",
+                  "relative text-sm font-semibold tracking-tight transition-colors",
                   light
-                    ? isActive(link.href)
-                      ? "text-white"
-                      : "text-white/75 hover:text-white"
-                    : isActive(link.href)
-                      ? "text-ink"
-                      : "text-ink-muted hover:text-ink"
+                    ? cn("text-cream/80 hover:text-cream", active && "text-cream")
+                    : cn("text-navy-900/80 hover:text-navy-900", active && "text-navy-900")
                 )}
               >
                 {link.label}
-                {isActive(link.href) && (
+                {active && (
                   <motion.span
                     layoutId="nav-underline"
-                    className="absolute inset-x-3 -bottom-0.5 h-[2px] rounded-full bg-gold-light"
+                    className="absolute -bottom-1.5 left-0 right-0 h-[2px] bg-brown-500"
                   />
                 )}
               </Link>
-            </li>
-          ))}
-        </ul>
+            );
+          })}
+        </nav>
 
         <div className="hidden lg:block">
-          <Button href="/give" arrow className="!px-6 !py-3">
+          <Link
+            href="/give"
+            className="rounded-full bg-brown-500 px-5 py-2.5 text-sm font-semibold text-cream transition-colors hover:bg-brown-700"
+          >
             Give
-          </Button>
+          </Link>
         </div>
 
         <button
-          type="button"
-          onClick={() => setOpen((o) => !o)}
-          className={cn(
-            "relative z-10 flex h-11 w-11 items-center justify-center rounded-full border lg:hidden",
-            light ? "border-white/30 bg-white/10 backdrop-blur" : "border-ink/10 bg-white"
-          )}
+          aria-label="Toggle navigation menu"
           aria-expanded={open}
-          aria-controls="mobile-menu"
-          aria-label={open ? "Close menu" : "Open menu"}
+          onClick={() => setOpen((v) => !v)}
+          className={cn("lg:hidden transition-colors", light ? "text-cream" : "text-navy-900")}
         >
-          <span className="relative block h-3 w-5">
-            <motion.span
-              className={cn("absolute left-0 top-0 h-[2px] w-5 rounded", light ? "bg-white" : "bg-ink")}
-              animate={open ? { rotate: 45, y: 5 } : { rotate: 0, y: 0 }}
-            />
-            <motion.span
-              className={cn("absolute bottom-0 left-0 h-[2px] w-5 rounded", light ? "bg-white" : "bg-ink")}
-              animate={open ? { rotate: -45, y: -5 } : { rotate: 0, y: 0 }}
-            />
-          </span>
+          {open ? <X size={26} /> : <Menu size={26} />}
         </button>
-      </nav>
+      </div>
 
       <AnimatePresence>
         {open && (
-          <motion.div
-            id="mobile-menu"
-            className="fixed inset-0 flex flex-col overflow-y-auto bg-white px-5 pb-10 pt-28 lg:hidden"
-            initial={{ clipPath: "circle(0% at calc(100% - 42px) 42px)" }}
-            animate={{ clipPath: "circle(150% at calc(100% - 42px) 42px)" }}
-            exit={{ clipPath: "circle(0% at calc(100% - 42px) 42px)" }}
-            transition={{ duration: 0.7, ease: [0.76, 0, 0.24, 1] }}
+          <motion.nav
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:hidden overflow-hidden bg-cream border-t border-navy/10"
           >
-            <ul className="flex flex-col gap-1">
-              {[{ label: "Home", href: "/" }, ...links].map((link, i) => (
-                <li key={link.href} className="overflow-hidden">
-                  <motion.div
-                    initial={{ y: "100%" }}
-                    animate={{ y: 0 }}
-                    transition={{ delay: 0.25 + i * 0.05, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                  >
-                    <Link
-                      href={link.href}
-                      aria-current={
-                        (link.href === "/" ? pathname === "/" : isActive(link.href))
-                          ? "page"
-                          : undefined
-                      }
-                      className="flex items-baseline gap-4 py-1 text-4xl font-extrabold tracking-tight text-ink aria-[current=page]:text-gold-deep sm:text-5xl"
-                    >
-                      <span className="text-caption font-semibold text-gold-deep">
-                        0{i + 1}
-                      </span>
-                      {link.label}
-                    </Link>
-                  </motion.div>
-                </li>
+            <div className="flex flex-col gap-1 px-6 py-6">
+              {links.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={cn(
+                    "py-3 text-lg font-semibold text-navy-900/85 border-b border-navy/5 last:border-none",
+                    pathname === link.href && "text-brown-500"
+                  )}
+                >
+                  {link.label}
+                </Link>
               ))}
-            </ul>
-            <div className="mt-auto space-y-4 border-t border-gold/30 pt-6">
-              <Button href="/give" arrow>
+              <Link
+                href="/give"
+                className="mt-4 rounded-full bg-brown-500 px-5 py-3 text-center text-base font-semibold text-cream"
+              >
                 Give
-              </Button>
-              <p className="text-caption text-ink-muted">
-                <span className="font-semibold text-ink">Sunday Service</span> · Every Sunday{" "}
-                {siteConfig.serviceTimes[0]?.time}
-              </p>
+              </Link>
             </div>
-          </motion.div>
+          </motion.nav>
         )}
       </AnimatePresence>
     </header>

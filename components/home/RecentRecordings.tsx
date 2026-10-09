@@ -1,6 +1,6 @@
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { ScrollReveal } from "@/components/ui/ScrollReveal";
-import { Button } from "@/components/ui/Button";
 import { RecordingCard } from "@/components/RecordingCard";
 import { getRecentRecordings } from "@/lib/youtube";
 
@@ -10,22 +10,20 @@ export async function RecentRecordings() {
   if (recordings.length === 0) return null;
 
   return (
-    <section className="section relative bg-champagne">
-      <div className="wrap">
-        <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
-          <SectionHeading
-            eyebrow="Catch up"
-            title="Recent recordings."
-            highlight={["recordings."]}
-          />
-          <ScrollReveal>
-            <Button href="/sermons" variant="secondary" arrow>
-              All recordings
-            </Button>
-          </ScrollReveal>
+    <section className="bg-cream py-28">
+      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+        <div className="flex flex-wrap items-end justify-between gap-6">
+          <SectionHeading eyebrow="Catch up" title="Recent recordings." />
+          <Link
+            href="/sermons"
+            className="group flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-navy-900"
+          >
+            All videos
+            <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+          </Link>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {recordings.map((r, i) => (
             <RecordingCard key={r.videoId} recording={r} index={i} />
           ))}

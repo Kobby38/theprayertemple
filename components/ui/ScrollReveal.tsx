@@ -14,7 +14,7 @@ type ScrollRevealProps = {
 export function ScrollReveal({
   children,
   delay = 0,
-  y = 40,
+  y = 28,
   className,
   once = true,
 }: ScrollRevealProps) {
@@ -23,8 +23,8 @@ export function ScrollReveal({
       className={className}
       initial={{ opacity: 0, y }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once, margin: "-80px" }}
-      transition={{ duration: 0.9, delay, ease: [0.16, 1, 0.3, 1] }}
+      viewport={{ once, amount: 0.2 }}
+      transition={{ duration: 0.7, delay, ease: [0.16, 1, 0.3, 1] }}
     >
       {children}
     </motion.div>

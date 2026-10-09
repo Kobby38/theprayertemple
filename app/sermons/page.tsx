@@ -16,19 +16,18 @@ export default async function RecordingsPage() {
       <PageHero
         eyebrow="Recording archive"
         title="Recent recordings."
-        highlight={["recordings."]}
         description="Catch up on recent messages and gatherings from The Prayer Temple."
       />
-      <section className="bg-champagne pb-24 pt-16 md:pb-32">
-        <div className="wrap">
+      <section className="bg-cream pb-28">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10">
           {recordings.length > 0 ? (
-            <div className="grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {recordings.map((r, i) => (
                 <RecordingCard key={r.videoId} recording={r} index={i} />
               ))}
             </div>
           ) : (
-            <p className="text-center text-ink-muted">
+            <p className="text-center text-navy-900/60">
               No recordings available right now. Check back soon.
             </p>
           )}

@@ -4,7 +4,6 @@ import { Flame, GraduationCap, Landmark, Rocket, type LucideIcon } from "lucide-
 import { PageHero } from "@/components/PageHero";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { SplitText } from "@/components/ui/SplitText";
 import { Button } from "@/components/ui/Button";
 import { coreIdentity, declaration, leaders, missionStatement, siteConfig, vision } from "@/lib/data";
 
@@ -47,32 +46,30 @@ export default function AboutPage() {
       <PageHero
         eyebrow="Our story"
         title="Built on the Word. Sustained by prayer."
-        highlight={["prayer."]}
         description={
           <>
-            {siteConfig.name} was founded in {siteConfig.founded} with a simple conviction: a
-            church that prays will always outlast a church that only performs.
+            {siteConfig.name} was founded in {siteConfig.founded} with a
+            simple conviction: a church that prays will always outlast a
+            church that only performs.
           </>
         }
       />
 
-      <section className="section bg-white">
-        <div className="wrap">
-          <SectionHeading
-            eyebrow="Core identity"
-            title="The Prayer Temple is called to be:"
-            highlight={["be:"]}
-          />
-          <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <section className="bg-cream py-28">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10">
+          <SectionHeading eyebrow="Core identity" title="The Prayer Temple is called to be:" />
+          <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {coreIdentity.map((item, i) => {
               const Icon = identityIcons[item.icon] ?? Landmark;
               return (
                 <ScrollReveal key={item.label} delay={i * 0.08}>
-                  <div className="h-full rounded-3xl bg-mist p-8 ring-1 ring-leaf/30">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-green-gradient text-gold-light">
-                      <Icon size={24} />
+                  <div className="h-full rounded-2xl border border-navy-900/8 bg-white p-8">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-navy-900 text-brown-300">
+                      <Icon size={22} />
                     </div>
-                    <h3 className="mt-8 text-h4">{item.label}</h3>
+                    <h3 className="mt-6 text-lg font-bold leading-snug tracking-tight text-navy-900">
+                      {item.label}
+                    </h3>
                   </div>
                 </ScrollReveal>
               );
@@ -81,58 +78,61 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section bg-champagne">
-        <div className="wrap">
-          <SectionHeading
-            eyebrow="Our vision"
-            title="A divine mandate, not merely a church expression."
-            highlight={["mandate,"]}
-          />
-          <ol className="mt-16 border-t border-leaf/40">
+      <section className="bg-sand py-28">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10">
+          <SectionHeading eyebrow="Our vision" title="A divine mandate, not merely a church expression." />
+          <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {vision.pillars.map((pillar, i) => (
-              <ScrollReveal key={pillar} delay={i * 0.06} y={24}>
-                <li className="flex items-baseline gap-6 border-b border-leaf/40 py-8 md:gap-12">
-                  <span className="text-eyebrow uppercase text-gold-deep">0{i + 1}</span>
-                  <span className="text-h2">{pillar}</span>
-                </li>
+              <ScrollReveal key={pillar} delay={i * 0.08}>
+                <div className="h-full rounded-2xl border border-navy-900/8 bg-white p-8">
+                  <span className="text-xs font-bold uppercase tracking-widest text-brown-500">
+                    0{i + 1}
+                  </span>
+                  <h3 className="mt-3 text-xl font-bold leading-snug tracking-tight text-navy-900">
+                    {pillar}
+                  </h3>
+                </div>
               </ScrollReveal>
             ))}
-          </ol>
-          <ScrollReveal delay={0.2}>
-            <p className="mt-12 max-w-3xl text-body-lg text-ink-muted">{vision.statement}</p>
+          </div>
+          <ScrollReveal delay={0.3}>
+            <p className="mx-auto mt-14 max-w-3xl text-center text-lg leading-relaxed text-navy-900/70">
+              {vision.statement}
+            </p>
           </ScrollReveal>
         </div>
       </section>
 
-      <section className="section relative overflow-hidden bg-green-gradient text-white grain">
-        <div
-          className="pointer-events-none absolute -right-32 top-0 h-[34rem] w-[34rem] rounded-full bg-gold/20 blur-[130px]"
-          aria-hidden="true"
-        />
-        <div className="wrap relative text-center">
-          <p className="eyebrow justify-center !text-gold-light">Our mission</p>
-          <ScrollReveal delay={0.1}>
-            <p className="mx-auto mt-8 max-w-3xl text-balance text-h3 !font-semibold leading-snug text-white/90">
+      <section className="relative overflow-hidden bg-navy-900 py-28 text-cream grain">
+        <div className="pointer-events-none absolute -right-32 top-0 h-96 w-96 rounded-full bg-brown-500/20 blur-[100px]" />
+        <div className="relative mx-auto max-w-4xl px-6 text-center lg:px-10">
+          <ScrollReveal>
+            <p className="text-xs font-bold uppercase tracking-[0.3em] text-brown-300">
+              Our mission
+            </p>
+            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-cream/75">
               {missionStatement}
             </p>
           </ScrollReveal>
         </div>
       </section>
 
-      <section className="section bg-white">
-        <div className="wrap">
-          <SectionHeading
-            eyebrow="What we believe"
-            title="Our core convictions."
-            highlight={["convictions."]}
-          />
-          <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2">
+      <section className="bg-sand py-28">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10">
+          <SectionHeading eyebrow="What we believe" title="Our core convictions." />
+          <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2">
             {beliefs.map((b, i) => (
               <ScrollReveal key={b.title} delay={i * 0.08}>
-                <div className="h-full rounded-3xl bg-mist p-8 ring-1 ring-leaf/30 md:p-10">
-                  <span className="text-eyebrow uppercase text-gold-deep">0{i + 1}</span>
-                  <h3 className="mt-4 text-h3">{b.title}</h3>
-                  <p className="mt-4 text-ink-muted">{b.body}</p>
+                <div className="h-full rounded-2xl border border-navy-900/8 bg-white p-8">
+                  <span className="text-xs font-bold uppercase tracking-widest text-brown-500">
+                    0{i + 1}
+                  </span>
+                  <h3 className="mt-3 text-xl font-bold tracking-tight text-navy-900">
+                    {b.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-navy-900/60">
+                    {b.body}
+                  </p>
                 </div>
               </ScrollReveal>
             ))}
@@ -140,35 +140,41 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section bg-mist">
-        <div className="wrap grid items-center gap-14 lg:grid-cols-12">
-          <ScrollReveal className="lg:col-span-4">
-            <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-3xl ring-1 ring-gold/40 lg:max-w-none">
-              {founder.photo ? (
-                <Image
-                  src={founder.photo}
-                  alt={founder.name}
-                  fill
-                  sizes="(min-width: 1024px) 30vw, 80vw"
-                  className="object-cover"
-                />
-              ) : (
-                <div className="flex h-full items-center justify-center bg-forest text-4xl font-bold text-white">
-                  {founder.initials}
-                </div>
-              )}
-            </div>
-          </ScrollReveal>
-          <div className="lg:col-span-7 lg:col-start-6">
-            <p className="eyebrow">Our pastor</p>
-            <h2 className="mt-6 text-h2">
-              <SplitText text={founder.name} highlight={["Hackman"]} />
-            </h2>
+      <section className="relative overflow-hidden bg-navy-900 py-28 text-cream grain">
+        <div className="pointer-events-none absolute -left-32 top-0 h-96 w-96 rounded-full bg-brown-500/20 blur-[110px]" />
+        <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
+          <SectionHeading eyebrow="Leadership" title="Our Pastor" light />
+          <div className="mt-14 grid grid-cols-1 items-center gap-12 lg:grid-cols-[0.8fr_1.2fr]">
+            <ScrollReveal className="mx-auto w-full max-w-xs lg:max-w-sm">
+              <div className="overflow-hidden rounded-3xl shadow-2xl ring-1 ring-cream/10">
+                {founder.photo ? (
+                  <Image
+                    src={founder.photo}
+                    alt={founder.name}
+                    width={1280}
+                    height={1600}
+                    sizes="(min-width: 1024px) 30vw, 80vw"
+                    className="h-auto w-full"
+                  />
+                ) : (
+                  <div className="flex aspect-[3/4] items-center justify-center bg-cream/5 text-4xl font-bold">
+                    {founder.initials}
+                  </div>
+                )}
+              </div>
+            </ScrollReveal>
             <ScrollReveal delay={0.15}>
-              <p className="mt-3 text-eyebrow uppercase text-gold-deep">{founder.role}</p>
-              <p className="mt-8 max-w-xl text-body-lg text-ink-muted">{founder.bio}</p>
-              <div className="mt-10">
-                <Button href="/founder" variant="dark" arrow>
+              <h3 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
+                {founder.name}
+              </h3>
+              <p className="mt-2 text-sm font-bold uppercase tracking-widest text-brown-300">
+                {founder.role}
+              </p>
+              <p className="mt-6 max-w-xl text-lg leading-relaxed text-cream/70">
+                {founder.bio}
+              </p>
+              <div className="mt-8">
+                <Button href="/founder" variant="ghost" className="border-cream/25 text-cream hover:border-cream">
                   Read her full story
                 </Button>
               </div>
@@ -177,28 +183,29 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section relative overflow-hidden bg-night text-white grain">
-        <div
-          className="pointer-events-none absolute left-1/2 top-1/2 h-[40rem] w-[40rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-leaf/20 blur-[130px]"
-          aria-hidden="true"
-        />
-        <div className="wrap relative text-center">
-          <p className="eyebrow justify-center !text-gold-light">Final declaration</p>
-          <ScrollReveal delay={0.1}>
-            <p className="mx-auto mt-8 max-w-2xl text-body-lg text-white/80">
+      <section className="relative overflow-hidden bg-brown-500 py-28 text-cream">
+        <div className="relative mx-auto max-w-4xl px-6 text-center lg:px-10">
+          <ScrollReveal>
+            <p className="text-xs font-bold uppercase tracking-[0.3em] text-navy-900/60">
+              Final declaration
+            </p>
+            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-cream/85">
               {declaration.intro}
             </p>
-            <p className="mx-auto mt-4 max-w-2xl text-white/60">
+            <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-cream/75">
               We are: {declaration.identity.join(" · ")}.
             </p>
+            <div className="mt-10 space-y-1">
+              {declaration.rally.map((line) => (
+                <p
+                  key={line}
+                  className="text-balance text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl"
+                >
+                  {line}
+                </p>
+              ))}
+            </div>
           </ScrollReveal>
-          <div className="mt-14">
-            {declaration.rally.map((line, i) => (
-              <p key={line} className="text-h1">
-                <SplitText text={line} highlight={line.split(" ")} light delay={i * 0.15} />
-              </p>
-            ))}
-          </div>
         </div>
       </section>
     </>
