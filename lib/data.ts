@@ -166,7 +166,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     quote:
-      "The prayers during Midnight Cry have transformed me.",
+      "The prayers during Midnight Cry have transformed me. Each week, as believers gather to seek God together, I experience His presence in a fresh and personal way. Midnight Cry has strengthened my faith, deepened my prayer life, and taught me to depend on the Holy Spirit. I am grateful for this ministry and for everyone who stands in prayer. God is faithful, and prayer truly works.",
     name: "Kwabena Opoku",
     role: "Midnight Cry",
   },
