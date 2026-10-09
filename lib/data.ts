@@ -164,4 +164,10 @@ export const testimonials: Testimonial[] = [
     name: "Prophetess Favour",
     role: "Midnight Cry",
   },
+  {
+    quote:
+      "The prayers during Midnight Cry have transformed me.",
+    name: "Kwabena Opoku",
+    role: "Midnight Cry",
+  },
 ];
