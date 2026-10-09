@@ -1,41 +1,61 @@
+import Image from "next/image";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
-import { SectionHeading } from "@/components/ui/SectionHeading";
-import { siteConfig } from "@/lib/data";
+import { SplitText } from "@/components/ui/SplitText";
+import { Button } from "@/components/ui/Button";
+import { leaders, siteConfig } from "@/lib/data";
 
 export function Welcome() {
+  const pastor = leaders[0];
   return (
-    <section id="welcome" className="relative bg-cream py-28">
-      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-16 px-6 lg:grid-cols-[1fr_1fr] lg:px-10">
-        <SectionHeading
-          eyebrow="Welcome home"
-          title="Wherever you are in your walk with God, there's a seat for you here."
-        />
-        <ScrollReveal delay={0.15} className="flex flex-col justify-center">
-          <p className="text-lg leading-relaxed text-navy-900/70">
-            {siteConfig.name} is a community built on the Word of God and a
-            life of prayer. We believe church should be honest, alive, and
-            practical, a place where doubt is welcome and encounters with
-            God are normal.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-x-12 gap-y-6 border-t border-navy-900/10 pt-8">
-            {siteConfig.serviceTimes.map((s) => (
-              <div key={s.label}>
-                <p className="text-2xl font-extrabold tracking-tight text-navy-900">
-                  {s.time}
-                </p>
-                <p className="mt-1 text-xs font-semibold uppercase tracking-widest text-navy-900/50">
-                  {s.label}
-                </p>
+    <section id="welcome" className="section relative scroll-mt-20">
+      <div className="wrap grid gap-16 lg:grid-cols-12">
+        <div className="lg:col-span-7">
+          <p className="eyebrow">Welcome home</p>
+          <h2 className="mt-6 text-h2">
+            <SplitText
+              text="Wherever you are in your walk with God, there's a seat for you here."
+              highlight={["seat"]}
+            />
+          </h2>
+          <ScrollReveal delay={0.2}>
+            <p className="mt-8 max-w-xl text-body-lg text-ink-muted">
+              {siteConfig.name} is a community built on the Word of God and a life of prayer. We
+              believe church should be honest, alive, and practical, a place where doubt is welcome
+              and encounters with God are normal.
+            </p>
+            <div className="mt-10 flex flex-wrap gap-x-12 gap-y-6 border-t border-gold/30 pt-8">
+              {siteConfig.serviceTimes.map((s) => (
+                <div key={s.label}>
+                  <p className="text-h3">{s.time}</p>
+                  <p className="mt-1 text-eyebrow uppercase text-gold-deep">{s.label}</p>
+                </div>
+              ))}
+              <div>
+                <p className="text-h3">Clock House</p>
+                <p className="mt-1 text-eyebrow uppercase text-gold-deep">Community Centre, London</p>
               </div>
-            ))}
-            <div>
-              <p className="text-2xl font-extrabold tracking-tight text-navy-900">
-                Clock House
-              </p>
-              <p className="mt-1 text-xs font-semibold uppercase tracking-widest text-navy-900/50">
-                Community Centre, London
-              </p>
             </div>
+          </ScrollReveal>
+        </div>
+
+        <ScrollReveal delay={0.2} className="lg:col-span-4 lg:col-start-9 lg:pt-4">
+          <div className="relative aspect-[4/5] overflow-hidden rounded-3xl ring-1 ring-gold/30">
+            {pastor.photo && (
+              <Image
+                src={pastor.photo}
+                alt={`${pastor.name}, ${pastor.role}`}
+                fill
+                sizes="(min-width: 1024px) 30vw, 90vw"
+                className="object-cover"
+              />
+            )}
+          </div>
+          <p className="mt-6 font-bold">{pastor.name}</p>
+          <p className="text-caption text-gold-deep">{pastor.role}</p>
+          <div className="mt-6">
+            <Button href="/about" variant="ghost" arrow>
+              Our story
+            </Button>
           </div>
         </ScrollReveal>
       </div>

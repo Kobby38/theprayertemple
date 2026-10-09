@@ -14,11 +14,12 @@ export default function EventsPage() {
       <PageHero
         eyebrow="Calendar"
         title="What's happening next."
+        highlight={["next."]}
         description="From prayer vigils to conferences, here's how to get plugged in this month."
       />
-      <section className="bg-cream py-20">
-        <div className="mx-auto max-w-4xl px-6 lg:px-10">
-          <div className="flex flex-col gap-5">
+      <section className="bg-mist pb-24 pt-16 md:pb-32">
+        <div className="wrap">
+          <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
             {events.map((event, i) => (
               <EventCard key={event.slug} event={event} index={i} />
             ))}

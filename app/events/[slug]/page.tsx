@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, Calendar, Clock, MapPin } from "lucide-react";
+import { Calendar, Clock, MapPin } from "lucide-react";
+import { PageHero } from "@/components/PageHero";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { Button } from "@/components/ui/Button";
 import { events } from "@/lib/data";
 
@@ -39,42 +40,52 @@ export default async function EventDetailPage(
         }));
 
   return (
-    <section className="bg-cream pb-28 pt-40">
-      <div className="mx-auto max-w-3xl px-6 lg:px-10">
-        <Link
-          href="/events"
-          className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-navy-900/60 transition-colors hover:text-navy-900"
-        >
-          <ArrowLeft size={16} /> All events
-        </Link>
+    <>
+      <PageHero eyebrow={event.category} title={event.title} />
 
-        <p className="mt-8 text-xs font-bold uppercase tracking-widest text-brown-500">
-          {event.category}
-        </p>
-        <h1 className="mt-3 text-balance text-4xl font-extrabold leading-[1.05] tracking-tight text-navy-900 sm:text-6xl">
-          {event.title}
-        </h1>
+      <section className="bg-white pb-24 pt-4 md:pb-32">
+        <div className="wrap max-w-4xl">
+          <ScrollReveal>
+            <div className="grid gap-6 rounded-3xl bg-ivory p-8 ring-1 ring-gold/30 sm:grid-cols-3">
+              <div className="flex items-start gap-3">
+                <Calendar size={20} className="mt-0.5 flex-shrink-0 text-gold-deep" />
+                <div>
+                  <p className="text-caption text-ink-muted">Date</p>
+                  <p className="mt-1 font-semibold">{eventDate}</p>
+                </div>
+              </div>
+              {event.time && (
+                <div className="flex items-start gap-3">
+                  <Clock size={20} className="mt-0.5 flex-shrink-0 text-gold-deep" />
+                  <div>
+                    <p className="text-caption text-ink-muted">Time</p>
+                    <p className="mt-1 font-semibold">{event.time}</p>
+                  </div>
+                </div>
+              )}
+              <div className="flex items-start gap-3">
+                <MapPin size={20} className="mt-0.5 flex-shrink-0 text-gold-deep" />
+                <div>
+                  <p className="text-caption text-ink-muted">Where</p>
+                  <p className="mt-1 font-semibold">{event.location}</p>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
 
-        <div className="mt-8 flex flex-col gap-3 rounded-2xl border border-navy-900/10 bg-white p-6 text-sm font-medium text-navy-900/70 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-8">
-          <span className="flex items-center gap-2">
-            <Calendar size={16} /> {eventDate}
-          </span>
-          <span className="flex items-center gap-2">
-            <Clock size={16} /> {event.time}
-          </span>
-          <span className="flex items-center gap-2">
-            <MapPin size={16} /> {event.location}
-          </span>
+          <ScrollReveal delay={0.1}>
+            <p className="mt-12 text-body-lg text-ink-muted">{event.details}</p>
+            <div className="mt-10 flex flex-wrap gap-3">
+              <Button href="/contact" arrow>
+                Get in touch to RSVP
+              </Button>
+              <Button href="/events" variant="secondary">
+                All events
+              </Button>
+            </div>
+          </ScrollReveal>
         </div>
-
-        <p className="mt-10 text-lg leading-relaxed text-navy-900/70">
-          {event.details}
-        </p>
-
-        <div className="mt-10">
-          <Button href="/contact">Get in touch to RSVP</Button>
-        </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

@@ -12,6 +12,7 @@ const quickLinks = [
   { href: "/about", label: "About" },
   { href: "/sermons", label: "Recordings" },
   { href: "/events", label: "Events" },
+  { href: "/founder", label: "Our Pastor" },
 ];
 
 const involvement = [
@@ -23,86 +24,97 @@ const involvement = [
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-navy-950 text-cream">
-      <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10">
-        <div className="grid grid-cols-1 gap-14 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
-          <div>
-            <Image
-              src="/images/prayer-temple-logo.webp"
-              alt={siteConfig.name}
-              width={540}
-              height={360}
-              className="h-20 w-auto"
-            />
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-cream/60">
-              {siteConfig.tagline}. Founded {siteConfig.founded} under the
-              leadership of Prophetess Abena Hackman.
-            </p>
-            <div className="mt-6 flex gap-4">
-              {socialLinks.map((s) => (
+    <footer className="relative overflow-hidden bg-night text-white/70">
+      <div
+        className="pointer-events-none absolute -top-40 left-1/2 h-[30rem] w-[44rem] -translate-x-1/2 rounded-full bg-leaf/15 blur-[120px]"
+        aria-hidden="true"
+      />
+      <div className="wrap relative grid gap-14 pb-10 pt-20 md:grid-cols-2 lg:grid-cols-12 lg:pt-28">
+        <div className="lg:col-span-4">
+          <Image
+            src="/images/prayer-temple-logo.webp"
+            alt={siteConfig.name}
+            width={540}
+            height={360}
+            className="h-24 w-auto"
+          />
+          <p className="mt-6 max-w-sm">
+            {siteConfig.tagline}. Founded {siteConfig.founded} under the leadership of
+            Prophetess Abena Hackman.
+          </p>
+          <ul className="mt-8 flex gap-3">
+            {socialLinks.map((s) => (
+              <li key={s.label}>
                 <a
-                  key={s.label}
                   href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={s.label}
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-cream/15 text-[11px] font-bold tracking-wide transition-colors hover:border-brown-300 hover:text-brown-300"
+                  className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/5 transition-colors hover:border-gold-light"
                 >
                   <s.icon size={20} />
                 </a>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-brown-300">
-              Explore
-            </p>
-            <ul className="mt-5 space-y-3 text-sm text-cream/70">
-              {quickLinks.map((l) => (
-                <li key={l.href}>
-                  <Link href={l.href} className="transition-colors hover:text-cream">
-                    {l.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-brown-300">
-              Get Involved
-            </p>
-            <ul className="mt-5 space-y-3 text-sm text-cream/70">
-              {involvement.map((l) => (
-                <li key={l.href}>
-                  <Link href={l.href} className="transition-colors hover:text-cream">
-                    {l.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-brown-300">
-              Service Times
-            </p>
-            <ul className="mt-5 space-y-3 text-sm text-cream/70">
-              {siteConfig.serviceTimes.map((s) => (
-                <li key={s.label} className="flex flex-col">
-                  <span className="text-cream">{s.label}</span>
-                  <span>{s.time}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+              </li>
+            ))}
+          </ul>
         </div>
 
-        <div className="mt-16 flex flex-col gap-4 border-t border-cream/10 pt-8 text-xs text-cream/45 sm:flex-row sm:items-center sm:justify-between">
-          <p>
-            © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
+        <div className="lg:col-span-2">
+          <h2 className="text-eyebrow uppercase text-gold-light">Explore</h2>
+          <ul className="mt-6 space-y-3">
+            {quickLinks.map((l) => (
+              <li key={l.href}>
+                <Link href={l.href} className="transition-colors hover:text-gold-light">
+                  {l.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="lg:col-span-3">
+          <h2 className="text-eyebrow uppercase text-gold-light">Get involved</h2>
+          <ul className="mt-6 space-y-3">
+            {involvement.map((l) => (
+              <li key={l.href}>
+                <Link href={l.href} className="transition-colors hover:text-gold-light">
+                  {l.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="lg:col-span-3">
+          <h2 className="text-eyebrow uppercase text-gold-light">Gather with us</h2>
+          <ul className="mt-6 space-y-4">
+            {siteConfig.serviceTimes.map((s) => (
+              <li key={s.label}>
+                <p className="font-semibold text-white">{s.label}</p>
+                <p className="text-caption">Every Sunday · {s.time}</p>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-4 max-w-xs text-caption">{siteConfig.address}</p>
+          <p className="mt-4 text-caption">
+            <a href={`mailto:${siteConfig.email}`} className="hover:text-gold-light">
+              {siteConfig.email}
+            </a>
           </p>
-          <p>{siteConfig.address}</p>
         </div>
+      </div>
+
+      <div className="wrap relative" aria-hidden="true">
+        <p className="gold-text select-none text-center text-[15vw] font-extrabold leading-[0.85] tracking-[-0.05em] lg:text-[13.5vw] 2xl:text-[12rem]">
+          Prayer Temple
+        </p>
+      </div>
+
+      <div className="wrap relative flex flex-col gap-3 border-t border-white/10 py-8 text-caption md:flex-row md:justify-between">
+        <p>
+          © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
+        </p>
+        <p>A house of prayer for every nation.</p>
       </div>
     </footer>
   );

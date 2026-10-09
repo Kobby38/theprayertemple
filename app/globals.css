@@ -1,43 +1,60 @@
 @import "tailwindcss";
 
 /*
-  Tailwind v4 uses CSS-first theming (@theme) instead of tailwind.config.ts.
-  Every token below becomes a utility automatically:
-  --color-navy -> bg-navy / text-navy / border-navy, etc.
+  Design system: ivory + deep forest green + gold (a light, editorial look
+  with big animated type). Every token below becomes a Tailwind utility.
 */
 @theme {
-  /* Deep sea blue — the site's structural dark base */
-  --color-navy-950: #041c2c;
-  --color-navy-900: #0a3d62;
-  --color-navy-800: #0f527f;
-  --color-navy-700: #15699e;
-  --color-navy: #0a3d62;
+  --color-gold: #c9a227;
+  --color-gold-light: #e6c866;
+  --color-gold-deep: #8c6a0b;
 
-  /* Warm gold — from the poster's "SUNDAY" yellow (replaces the former brown) */
-  --color-brown-900: #5c3d05;
-  --color-brown-700: #96660a;
-  --color-brown-500: #c9962c;
-  --color-brown-300: #f0c869;
-  --color-brown: #c9962c;
+  --color-ivory: #fbf8f1;
+  --color-champagne: #f4ebd3;
+  --color-mist: #eaf3ec;
 
-  /* Raspberry pink — from the poster's magenta gradient */
-  --color-slate: #d6336c;
-  --color-slate-light: #f06595;
+  --color-ink: #10261b;
+  --color-ink-muted: #4e6055;
 
-  /* Bright sky blue — from the poster's logo mark and sky backdrop */
-  --color-sky: #1e88e5;
-  --color-sky-light: #6ab8f7;
-
-  --color-cream: #fdf8f3;
-  --color-sand: #f5ece1;
-  --color-sand-dark: #e8dcc8;
+  --color-forest: #0e3b2a;
+  --color-forest-soft: #14513a;
+  --color-night: #081f16;
+  --color-leaf: #2f8f5b;
+  --color-leaf-light: #7cc79c;
 
   --font-sans: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
 
-  --animate-marquee: marquee 28s linear infinite;
-  --animate-fade-up: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --text-display: clamp(3rem, 9vw, 8.5rem);
+  --text-display--line-height: 0.95;
+  --text-display--letter-spacing: -0.045em;
+  --text-display--font-weight: 800;
+  --text-h1: clamp(2.5rem, 6.4vw, 5.75rem);
+  --text-h1--line-height: 1;
+  --text-h1--letter-spacing: -0.04em;
+  --text-h1--font-weight: 800;
+  --text-h2: clamp(2.1rem, 4.6vw, 4rem);
+  --text-h2--line-height: 1.04;
+  --text-h2--letter-spacing: -0.035em;
+  --text-h2--font-weight: 700;
+  --text-h3: clamp(1.4rem, 2.4vw, 2.1rem);
+  --text-h3--line-height: 1.12;
+  --text-h3--letter-spacing: -0.025em;
+  --text-h3--font-weight: 700;
+  --text-h4: 1.2rem;
+  --text-h4--line-height: 1.3;
+  --text-h4--letter-spacing: -0.015em;
+  --text-h4--font-weight: 600;
+  --text-body-lg: 1.1875rem;
+  --text-body-lg--line-height: 1.7;
+  --text-caption: 0.8125rem;
+  --text-caption--line-height: 1.5;
+  --text-eyebrow: 0.75rem;
+  --text-eyebrow--line-height: 1;
+  --text-eyebrow--letter-spacing: 0.22em;
+  --text-eyebrow--font-weight: 600;
 
-  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-marquee: marquee var(--marquee-duration, 40s) linear infinite;
+  --animate-float: float 18s ease-in-out infinite;
 }
 
 @keyframes marquee {
@@ -45,49 +62,98 @@
   to { transform: translateX(-50%); }
 }
 
-@keyframes fade-up {
-  from { opacity: 0; transform: translateY(1.5rem); }
-  to { opacity: 1; transform: translateY(0); }
+@keyframes float {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(4%, -6%, 0) scale(1.08); }
 }
 
-html {
-  scroll-behavior: smooth;
+@utility wrap {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 84rem;
+  padding-inline: 1.25rem;
+  @media (min-width: 48rem) { padding-inline: 2rem; }
+  @media (min-width: 64rem) { padding-inline: 3rem; }
 }
 
-body {
-  background: var(--color-cream);
-  color: var(--color-navy-900);
-  font-family: var(--font-sans);
+@utility section {
+  padding-block: 5rem;
+  @media (min-width: 48rem) { padding-block: 7rem; }
+  @media (min-width: 64rem) { padding-block: 9rem; }
 }
 
-::selection {
-  background: var(--color-brown-500);
-  color: var(--color-cream);
+@utility bg-gold-gradient {
+  background-image: linear-gradient(135deg, #8c6a0b 0%, #c9a227 45%, #e6c866 60%, #c9a227 100%);
 }
 
-/* Subtle film-grain overlay used behind dark hero/CTA sections */
-.grain::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.05;
-  mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  body {
+    background: #fff;
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    text-rendering: optimizeLegibility;
+  }
+  ::selection {
+    background: var(--color-gold-light);
+    color: var(--color-ink);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 3px;
+    border-radius: 0.375rem;
+  }
+  h1, h2, h3, h4 { text-wrap: balance; }
+  p { text-wrap: pretty; }
 }
 
-.text-balance {
-  text-wrap: balance;
+@layer components {
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: var(--text-eyebrow);
+    line-height: 1;
+    letter-spacing: 0.22em;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--color-gold-deep);
+  }
+  .gold-text {
+    background-image: linear-gradient(135deg, #8c6a0b 0%, #c9a227 45%, #e6c866 60%, #c9a227 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .gold-rule {
+    height: 1px;
+    width: 100%;
+    background: linear-gradient(to right, transparent, var(--color-gold), transparent);
+  }
+  .text-outline-gold {
+    color: transparent;
+    -webkit-text-stroke: 1.5px #c9a227;
+  }
+  .grain::after {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    opacity: 0.06;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
 }
 
-/* Thin custom scrollbar to match the editorial tone */
-::-webkit-scrollbar {
-  width: 10px;
-}
-::-webkit-scrollbar-track {
-  background: var(--color-cream);
-}
-::-webkit-scrollbar-thumb {
-  background: var(--color-brown-300);
-  border-radius: 999px;
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

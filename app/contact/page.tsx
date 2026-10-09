@@ -23,37 +23,37 @@ const details = [
   { icon: Mail, label: "Email", value: siteConfig.email },
 ];
 
+const iconChip =
+  "flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-white ring-1 ring-gold/40";
+
 export default function ContactPage() {
   return (
     <>
       <PageHero
         eyebrow="We'd love to hear from you"
         title="Get in touch."
+        highlight={["touch."]}
         description="Questions about a service, ministry, or event? Send us a message and our team will follow up."
       />
 
-      <section className="bg-cream py-28">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-16 px-6 lg:grid-cols-[1fr_1.2fr] lg:px-10">
+      <section className="bg-white pb-24 pt-4 md:pb-32">
+        <div className="wrap grid gap-16 lg:grid-cols-[1fr_1.2fr]">
           <ScrollReveal>
             <div className="space-y-8">
               {details.map((d) => (
                 <div key={d.label} className="flex items-start gap-4">
-                  <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full border border-navy-900/10 bg-white shadow-sm">
+                  <div className={iconChip}>
                     <d.icon size={22} />
                   </div>
                   <div>
-                    <p className="text-xs font-bold uppercase tracking-widest text-navy-900/50">
-                      {d.label}
-                    </p>
-                    <p className="mt-1 text-base font-medium text-navy-900">
-                      {d.value}
-                    </p>
+                    <p className="text-eyebrow uppercase text-gold-deep">{d.label}</p>
+                    <p className="mt-2 font-medium">{d.value}</p>
                     {d.label === "Address" && (
                       <a
                         href={siteConfig.mapsLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="mt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-brown-500 hover:text-brown-700"
+                        className="mt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-gold-deep transition-colors hover:text-ink"
                       >
                         <Navigation size={14} /> Get directions
                       </a>
@@ -61,19 +61,17 @@ export default function ContactPage() {
                   </div>
                 </div>
               ))}
+
               <div className="flex items-start gap-4">
-                <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full border border-navy-900/10 bg-white shadow-sm">
+                <div className={iconChip}>
                   <BigBenClockIcon size={22} />
                 </div>
                 <div>
-                  <p className="text-xs font-bold uppercase tracking-widest text-navy-900/50">
-                    Service Times
-                  </p>
-                  <div className="mt-1 space-y-0.5">
+                  <p className="text-eyebrow uppercase text-gold-deep">Service Times</p>
+                  <div className="mt-2 space-y-0.5">
                     {siteConfig.serviceTimes.map((s) => (
-                      <p key={s.label} className="text-sm text-navy-900/70">
-                        <span className="font-medium text-navy-900">{s.label}:</span>{" "}
-                        {s.time}
+                      <p key={s.label} className="text-ink-muted">
+                        <span className="font-medium text-ink">{s.label}:</span> {s.time}
                       </p>
                     ))}
                   </div>
@@ -81,21 +79,17 @@ export default function ContactPage() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full border border-navy-900/10 bg-white shadow-sm">
+                <div className={iconChip}>
                   <BusRoundelIcon size={22} />
                 </div>
                 <div>
-                  <p className="text-xs font-bold uppercase tracking-widest text-navy-900/50">
-                    Bus Routes
-                  </p>
-                  <p className="mt-1 text-base font-medium text-navy-900">
-                    {gettingHere.buses.join(", ")}
-                  </p>
+                  <p className="text-eyebrow uppercase text-gold-deep">Bus Routes</p>
+                  <p className="mt-2 font-medium">{gettingHere.buses.join(", ")}</p>
                 </div>
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full border border-navy-900/10 bg-white shadow-sm">
+                <div className={iconChip}>
                   <Image
                     src="/images/national-rail-logo.webp"
                     alt="National Rail"
@@ -104,47 +98,39 @@ export default function ContactPage() {
                   />
                 </div>
                 <div>
-                  <p className="text-xs font-bold uppercase tracking-widest text-navy-900/50">
-                    Nearest Train Station
-                  </p>
-                  <p className="mt-1 text-base font-medium text-navy-900">
-                    {gettingHere.trainStation}
-                  </p>
+                  <p className="text-eyebrow uppercase text-gold-deep">Nearest Train Station</p>
+                  <p className="mt-2 font-medium">{gettingHere.trainStation}</p>
                 </div>
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full border border-navy-900/10 bg-white shadow-sm">
+                <div className={iconChip}>
                   <DlrRoundelIcon size={22} />
                 </div>
                 <div>
-                  <p className="text-xs font-bold uppercase tracking-widest text-navy-900/50">
-                    Nearest DLR Station
-                  </p>
-                  <p className="mt-1 text-base font-medium text-navy-900">
-                    {gettingHere.dlrStation}
-                  </p>
+                  <p className="text-eyebrow uppercase text-gold-deep">Nearest DLR Station</p>
+                  <p className="mt-2 font-medium">{gettingHere.dlrStation}</p>
                 </div>
               </div>
             </div>
           </ScrollReveal>
 
           <ScrollReveal delay={0.15}>
-            <div className="rounded-2xl border border-navy-900/10 bg-white p-8 sm:p-10">
+            <div className="rounded-3xl bg-ivory p-8 ring-1 ring-gold/30 sm:p-10">
               <ContactForm />
             </div>
           </ScrollReveal>
         </div>
       </section>
 
-      <section className="bg-sand pb-28">
-        <div className="mx-auto max-w-7xl px-6 lg:px-10">
+      <section className="bg-mist pb-24 pt-16 md:pb-32">
+        <div className="wrap">
           <ScrollReveal>
-            <div className="overflow-hidden rounded-3xl border border-navy-900/10 shadow-xl">
+            <div className="overflow-hidden rounded-3xl ring-1 ring-gold/40">
               <iframe
                 title="Map to The Prayer Temple"
                 src={`https://www.google.com/maps?q=${encodeURIComponent(siteConfig.address)}&output=embed`}
-                className="h-[400px] w-full grayscale"
+                className="h-[420px] w-full"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               />
