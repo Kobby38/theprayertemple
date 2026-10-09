@@ -28,10 +28,10 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-14 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
           <div>
             <Image
-              src="/images/prayer-temple-logo.png"
+              src="/images/prayer-temple-logo.webp"
               alt={siteConfig.name}
-              width={1536}
-              height={1024}
+              width={540}
+              height={360}
               className="h-20 w-auto"
             />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-cream/60">

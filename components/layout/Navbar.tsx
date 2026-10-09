@@ -53,10 +53,10 @@ export function Navbar() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-10">
         <Link href="/" className="flex items-center" aria-label={siteConfig.name}>
           <Image
-            src="/images/prayer-temple-logo.png"
+            src="/images/prayer-temple-logo.webp"
             alt={siteConfig.name}
-            width={1536}
-            height={1024}
+            width={540}
+            height={360}
             priority
             className="h-14 w-auto"
           />
