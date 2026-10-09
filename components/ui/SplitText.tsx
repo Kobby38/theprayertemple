@@ -12,6 +12,8 @@ type SplitTextProps = {
   delay?: number;
   /** Animate on mount instead of when scrolled into view. */
   immediate?: boolean;
+  /** Use the brighter gold, for dark or green backgrounds. */
+  light?: boolean;
 };
 
 const normalize = (w: string) => w.replace(/[^\w']/g, "").toLowerCase();
@@ -23,6 +25,7 @@ export function SplitText({
   className,
   delay = 0,
   immediate = false,
+  light = false,
 }: SplitTextProps) {
   const words = text.split(" ");
   const marks = highlight.map(normalize);
@@ -46,7 +49,7 @@ export function SplitText({
           <Fragment key={`${word}-${i}`}>
             <span className="inline-block overflow-hidden pb-[0.12em] align-bottom">
               <motion.span
-                className={cn("inline-block", marks.includes(normalize(word)) && "gold-text")}
+                className={cn("inline-block", marks.includes(normalize(word)) && (light ? "gold-text-light" : "gold-text"))}
                 variants={{ hidden: { y: "110%" }, show: { y: "0%" } }}
                 transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
               >

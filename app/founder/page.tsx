@@ -36,13 +36,13 @@ export default function FounderPage() {
 
   return (
     <>
-      <section className="relative overflow-hidden bg-white pb-20 pt-40 md:pb-28 md:pt-48">
+      <section className="relative overflow-hidden bg-green-gradient pb-20 pt-40 text-white grain md:pb-28 md:pt-48">
         <div
-          className="pointer-events-none absolute -right-40 -top-40 h-[36rem] w-[36rem] rounded-full bg-gold-light/25 blur-3xl"
+          className="pointer-events-none absolute -right-40 -top-40 h-[36rem] w-[36rem] rounded-full bg-gold/35 blur-[110px]"
           aria-hidden="true"
         />
         <div
-          className="pointer-events-none absolute -left-40 bottom-0 h-[28rem] w-[28rem] rounded-full bg-leaf/10 blur-3xl"
+          className="pointer-events-none absolute -left-40 bottom-0 h-[28rem] w-[28rem] rounded-full bg-lime/25 blur-[110px]"
           aria-hidden="true"
         />
         <div className="wrap relative grid items-center gap-14 lg:grid-cols-12">
@@ -61,18 +61,18 @@ export default function FounderPage() {
             </div>
           </ScrollReveal>
           <div className="lg:col-span-7 lg:col-start-6">
-            <p className="eyebrow">Meet the founder</p>
+            <p className="eyebrow !text-gold-light">Meet the founder</p>
             <h1 className="mt-6 text-h1">
-              <SplitText text={founder.name} highlight={["Hackman"]} immediate delay={0.1} />
+              <SplitText text={founder.name} highlight={["Hackman"]} light immediate delay={0.1} />
             </h1>
             <ScrollReveal delay={0.4}>
-              <p className="mt-8 max-w-2xl text-body-lg text-ink-muted">{founderProfile.intro}</p>
+              <p className="mt-8 max-w-2xl text-body-lg text-white/80">{founderProfile.intro}</p>
             </ScrollReveal>
           </div>
         </div>
       </section>
 
-      <section className="section bg-ivory">
+      <section className="section bg-champagne">
         <div className="wrap text-center">
           <SectionHeading
             eyebrow="General Overseer"
@@ -100,8 +100,8 @@ export default function FounderPage() {
               const Icon = aspectIcons[aspect.icon] ?? Zap;
               return (
                 <ScrollReveal key={aspect.title} delay={(i % 3) * 0.08}>
-                  <div className="h-full rounded-3xl bg-ivory p-8 ring-1 ring-gold/25">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-forest text-gold-light">
+                  <div className="h-full rounded-3xl bg-mist p-8 ring-1 ring-leaf/30">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-green-gradient text-gold-light">
                       <Icon size={24} />
                     </div>
                     <h3 className="mt-8 text-h4">{aspect.title}</h3>
@@ -114,7 +114,7 @@ export default function FounderPage() {
         </div>
       </section>
 
-      <section className="section relative overflow-hidden bg-forest text-white grain">
+      <section className="section relative overflow-hidden bg-green-gradient text-white grain">
         <div
           className="pointer-events-none absolute left-1/2 top-0 h-[34rem] w-[44rem] -translate-x-1/2 rounded-full bg-gold/20 blur-[130px]"
           aria-hidden="true"
@@ -129,7 +129,7 @@ export default function FounderPage() {
         </div>
       </section>
 
-      <section className="section bg-champagne">
+      <section className="section bg-mist">
         <div className="wrap text-center">
           <SectionHeading
             eyebrow="Get involved"

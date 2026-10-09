@@ -38,7 +38,7 @@ export function SectionHeading({
         </ScrollReveal>
       )}
       <h2 className={cn("mt-5 text-h2", light ? "text-white" : "text-ink")}>
-        <SplitText text={title} highlight={highlight} />
+        <SplitText text={title} highlight={highlight} light={light} />
       </h2>
       {description && (
         <ScrollReveal delay={0.15}>

@@ -43,10 +43,10 @@ export default async function EventDetailPage(
     <>
       <PageHero eyebrow={event.category} title={event.title} />
 
-      <section className="bg-white pb-24 pt-4 md:pb-32">
+      <section className="bg-white pb-24 pt-16 md:pb-32">
         <div className="wrap max-w-4xl">
           <ScrollReveal>
-            <div className="grid gap-6 rounded-3xl bg-ivory p-8 ring-1 ring-gold/30 sm:grid-cols-3">
+            <div className="grid gap-6 rounded-3xl bg-mist p-8 ring-1 ring-leaf/40 sm:grid-cols-3">
               <div className="flex items-start gap-3">
                 <Calendar size={20} className="mt-0.5 flex-shrink-0 text-gold-deep" />
                 <div>

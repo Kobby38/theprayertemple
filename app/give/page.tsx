@@ -55,8 +55,8 @@ export default function GivePage() {
           <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-3">
             {funds.map((f, i) => (
               <ScrollReveal key={f.title} delay={i * 0.1}>
-                <div className="h-full rounded-3xl bg-ivory p-8 ring-1 ring-gold/25">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-forest text-gold-light">
+                <div className="h-full rounded-3xl bg-mist p-8 ring-1 ring-leaf/30">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-green-gradient text-gold-light">
                     <f.icon size={24} />
                   </div>
                   <h3 className="mt-8 text-h4">{f.title}</h3>
@@ -68,7 +68,7 @@ export default function GivePage() {
         </div>
       </section>
 
-      <section className="section relative overflow-hidden bg-forest text-white grain">
+      <section className="section relative overflow-hidden bg-green-gradient text-white grain">
         <div
           className="pointer-events-none absolute left-1/2 top-0 h-[34rem] w-[44rem] -translate-x-1/2 rounded-full bg-gold/20 blur-[130px]"
           aria-hidden="true"

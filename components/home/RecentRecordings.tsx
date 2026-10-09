@@ -10,7 +10,7 @@ export async function RecentRecordings() {
   if (recordings.length === 0) return null;
 
   return (
-    <section className="section relative bg-white">
+    <section className="section relative bg-champagne">
       <div className="wrap">
         <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
           <SectionHeading

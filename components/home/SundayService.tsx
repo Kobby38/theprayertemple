@@ -7,7 +7,7 @@ import { siteConfig } from "@/lib/data";
 
 export function SundayService() {
   return (
-    <section className="section relative overflow-hidden bg-forest text-white grain">
+    <section className="section relative overflow-hidden bg-green-gradient text-white grain">
       <div
         className="pointer-events-none absolute -right-40 top-0 h-[40rem] w-[40rem] rounded-full bg-gold/20 blur-[140px]"
         aria-hidden="true"

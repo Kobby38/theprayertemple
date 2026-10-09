@@ -23,7 +23,7 @@ export default function MidnightCryPage() {
         description="An intercessory prayer ministry marked by spiritual awakening and seeking God through prayer, led by Prophetess Abena Hackman."
       />
 
-      <section className="section bg-white">
+      <section className="section bg-mist">
         <div className="wrap grid gap-16 lg:grid-cols-12">
           <div className="lg:col-span-6">
             <SectionHeading
@@ -50,7 +50,7 @@ export default function MidnightCryPage() {
         </div>
       </section>
 
-      <section className="section relative overflow-hidden bg-forest text-white grain">
+      <section className="section relative overflow-hidden bg-green-gradient text-white grain">
         <div
           className="pointer-events-none absolute left-1/2 top-1/2 h-[36rem] w-[36rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold/20 blur-[130px]"
           aria-hidden="true"

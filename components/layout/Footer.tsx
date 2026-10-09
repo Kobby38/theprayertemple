@@ -105,7 +105,7 @@ export function Footer() {
       </div>
 
       <div className="wrap relative" aria-hidden="true">
-        <p className="gold-text select-none text-center text-[15vw] font-extrabold leading-[0.85] tracking-[-0.05em] lg:text-[13.5vw] 2xl:text-[12rem]">
+        <p className="gold-text-light select-none text-center text-[15vw] font-extrabold leading-[0.85] tracking-[-0.05em] lg:text-[13.5vw] 2xl:text-[12rem]">
           Prayer Temple
         </p>
       </div>

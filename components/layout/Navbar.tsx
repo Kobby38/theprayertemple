@@ -46,6 +46,7 @@ export function Navbar() {
     setOpen(false);
   }
 
+  const light = !scrolled && !open;
   const isActive = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
 
   return (
@@ -77,14 +78,20 @@ export function Navbar() {
                 aria-current={isActive(link.href) ? "page" : undefined}
                 className={cn(
                   "relative whitespace-nowrap px-3 py-2 text-[0.9rem] font-medium transition-colors",
-                  isActive(link.href) ? "text-ink" : "text-ink-muted hover:text-ink"
+                  light
+                    ? isActive(link.href)
+                      ? "text-white"
+                      : "text-white/75 hover:text-white"
+                    : isActive(link.href)
+                      ? "text-ink"
+                      : "text-ink-muted hover:text-ink"
                 )}
               >
                 {link.label}
                 {isActive(link.href) && (
                   <motion.span
                     layoutId="nav-underline"
-                    className="absolute inset-x-3 -bottom-0.5 h-[2px] rounded-full bg-gold"
+                    className="absolute inset-x-3 -bottom-0.5 h-[2px] rounded-full bg-gold-light"
                   />
                 )}
               </Link>
@@ -101,18 +108,21 @@ export function Navbar() {
         <button
           type="button"
           onClick={() => setOpen((o) => !o)}
-          className="relative z-10 flex h-11 w-11 items-center justify-center rounded-full border border-ink/10 bg-white lg:hidden"
+          className={cn(
+            "relative z-10 flex h-11 w-11 items-center justify-center rounded-full border lg:hidden",
+            light ? "border-white/30 bg-white/10 backdrop-blur" : "border-ink/10 bg-white"
+          )}
           aria-expanded={open}
           aria-controls="mobile-menu"
           aria-label={open ? "Close menu" : "Open menu"}
         >
           <span className="relative block h-3 w-5">
             <motion.span
-              className="absolute left-0 top-0 h-[2px] w-5 rounded bg-ink"
+              className={cn("absolute left-0 top-0 h-[2px] w-5 rounded", light ? "bg-white" : "bg-ink")}
               animate={open ? { rotate: 45, y: 5 } : { rotate: 0, y: 0 }}
             />
             <motion.span
-              className="absolute bottom-0 left-0 h-[2px] w-5 rounded bg-ink"
+              className={cn("absolute bottom-0 left-0 h-[2px] w-5 rounded", light ? "bg-white" : "bg-ink")}
               animate={open ? { rotate: -45, y: -5 } : { rotate: 0, y: 0 }}
             />
           </span>

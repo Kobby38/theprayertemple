@@ -36,7 +36,7 @@ export default function ContactPage() {
         description="Questions about a service, ministry, or event? Send us a message and our team will follow up."
       />
 
-      <section className="bg-white pb-24 pt-4 md:pb-32">
+      <section className="bg-white pb-24 pt-16 md:pb-32">
         <div className="wrap grid gap-16 lg:grid-cols-[1fr_1.2fr]">
           <ScrollReveal>
             <div className="space-y-8">
@@ -116,14 +116,14 @@ export default function ContactPage() {
           </ScrollReveal>
 
           <ScrollReveal delay={0.15}>
-            <div className="rounded-3xl bg-ivory p-8 ring-1 ring-gold/30 sm:p-10">
+            <div className="rounded-3xl bg-mist p-8 ring-1 ring-leaf/40 sm:p-10">
               <ContactForm />
             </div>
           </ScrollReveal>
         </div>
       </section>
 
-      <section className="bg-mist pb-24 pt-16 md:pb-32">
+      <section className="bg-champagne pb-24 pt-16 md:pb-32">
         <div className="wrap">
           <ScrollReveal>
             <div className="overflow-hidden rounded-3xl ring-1 ring-gold/40">

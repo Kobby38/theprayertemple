@@ -39,32 +39,33 @@ const charityPhotos = [
 export default function EntrepreneurWomensMovementPage() {
   return (
     <>
-      <section className="relative overflow-hidden bg-white pb-20 pt-40 md:pb-28 md:pt-48">
+      <section className="relative overflow-hidden bg-green-gradient pb-20 pt-40 text-white grain md:pb-28 md:pt-48">
         <div
-          className="pointer-events-none absolute -right-40 -top-40 h-[36rem] w-[36rem] rounded-full bg-gold-light/25 blur-3xl"
+          className="pointer-events-none absolute -right-40 -top-40 h-[36rem] w-[36rem] rounded-full bg-gold/35 blur-[110px]"
           aria-hidden="true"
         />
         <div
-          className="pointer-events-none absolute -left-40 bottom-0 h-[28rem] w-[28rem] rounded-full bg-leaf/10 blur-3xl"
+          className="pointer-events-none absolute -left-40 bottom-0 h-[28rem] w-[28rem] rounded-full bg-lime/25 blur-[110px]"
           aria-hidden="true"
         />
         <div className="wrap relative grid items-center gap-14 lg:grid-cols-12">
           <div className="lg:col-span-7">
-            <p className="eyebrow">Ministry spotlight</p>
+            <p className="eyebrow !text-gold-light">Ministry spotlight</p>
             <h1 className="mt-6 text-h1">
               <SplitText
                 text="Entrepreneur Women's Movement"
                 highlight={["Women's"]}
+                light
                 immediate
                 delay={0.1}
               />
             </h1>
             <ScrollReveal delay={0.4}>
-              <p className="mt-8 max-w-xl text-body-lg text-ink-muted">
+              <p className="mt-8 max-w-xl text-body-lg text-white/80">
                 Faith-fueled business. Purpose-driven leadership. A community for women building
                 kingdom enterprises in business, ministry, and everywhere in between.
               </p>
-              <p className="mt-8 border-l-2 border-gold pl-4 text-sm font-medium italic text-ink-muted">
+              <p className="mt-8 border-l-2 border-gold-light pl-4 text-sm font-medium italic text-white/80">
                 &ldquo;A virtuous woman is a prayerful woman.&rdquo;
               </p>
             </ScrollReveal>
@@ -84,7 +85,7 @@ export default function EntrepreneurWomensMovementPage() {
         </div>
       </section>
 
-      <section className="section bg-ivory">
+      <section className="section bg-champagne">
         <div className="wrap grid gap-16 lg:grid-cols-12">
           <div className="lg:col-span-6">
             <SectionHeading
@@ -111,7 +112,7 @@ export default function EntrepreneurWomensMovementPage() {
         </div>
       </section>
 
-      <section className="section relative overflow-hidden bg-forest text-white grain">
+      <section className="section relative overflow-hidden bg-green-gradient text-white grain">
         <div
           className="pointer-events-none absolute left-1/2 top-1/2 h-[36rem] w-[36rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold/20 blur-[130px]"
           aria-hidden="true"
@@ -140,7 +141,7 @@ export default function EntrepreneurWomensMovementPage() {
         </div>
       </section>
 
-      <section className="section bg-white">
+      <section className="section bg-mist">
         <div className="wrap">
           <SectionHeading
             eyebrow="Faith in action"

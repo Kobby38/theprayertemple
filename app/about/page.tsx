@@ -68,8 +68,8 @@ export default function AboutPage() {
               const Icon = identityIcons[item.icon] ?? Landmark;
               return (
                 <ScrollReveal key={item.label} delay={i * 0.08}>
-                  <div className="h-full rounded-3xl bg-ivory p-8 ring-1 ring-gold/25">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-forest text-gold-light">
+                  <div className="h-full rounded-3xl bg-mist p-8 ring-1 ring-leaf/30">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-green-gradient text-gold-light">
                       <Icon size={24} />
                     </div>
                     <h3 className="mt-8 text-h4">{item.label}</h3>
@@ -81,17 +81,17 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section bg-mist">
+      <section className="section bg-champagne">
         <div className="wrap">
           <SectionHeading
             eyebrow="Our vision"
             title="A divine mandate, not merely a church expression."
             highlight={["mandate,"]}
           />
-          <ol className="mt-16 border-t border-gold/30">
+          <ol className="mt-16 border-t border-leaf/40">
             {vision.pillars.map((pillar, i) => (
               <ScrollReveal key={pillar} delay={i * 0.06} y={24}>
-                <li className="flex items-baseline gap-6 border-b border-gold/30 py-8 md:gap-12">
+                <li className="flex items-baseline gap-6 border-b border-leaf/40 py-8 md:gap-12">
                   <span className="text-eyebrow uppercase text-gold-deep">0{i + 1}</span>
                   <span className="text-h2">{pillar}</span>
                 </li>
@@ -104,7 +104,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section relative overflow-hidden bg-forest text-white grain">
+      <section className="section relative overflow-hidden bg-green-gradient text-white grain">
         <div
           className="pointer-events-none absolute -right-32 top-0 h-[34rem] w-[34rem] rounded-full bg-gold/20 blur-[130px]"
           aria-hidden="true"
@@ -129,7 +129,7 @@ export default function AboutPage() {
           <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2">
             {beliefs.map((b, i) => (
               <ScrollReveal key={b.title} delay={i * 0.08}>
-                <div className="h-full rounded-3xl bg-ivory p-8 ring-1 ring-gold/25 md:p-10">
+                <div className="h-full rounded-3xl bg-mist p-8 ring-1 ring-leaf/30 md:p-10">
                   <span className="text-eyebrow uppercase text-gold-deep">0{i + 1}</span>
                   <h3 className="mt-4 text-h3">{b.title}</h3>
                   <p className="mt-4 text-ink-muted">{b.body}</p>
@@ -140,7 +140,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section bg-champagne">
+      <section className="section bg-mist">
         <div className="wrap grid items-center gap-14 lg:grid-cols-12">
           <ScrollReveal className="lg:col-span-4">
             <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-3xl ring-1 ring-gold/40 lg:max-w-none">
@@ -194,8 +194,8 @@ export default function AboutPage() {
           </ScrollReveal>
           <div className="mt-14">
             {declaration.rally.map((line, i) => (
-              <p key={line} className="gold-text text-h1">
-                <SplitText text={line} delay={i * 0.15} />
+              <p key={line} className="text-h1">
+                <SplitText text={line} highlight={line.split(" ")} light delay={i * 0.15} />
               </p>
             ))}
           </div>

@@ -4,7 +4,7 @@ import { SplitText } from "@/components/ui/SplitText";
 
 export function CTASection() {
   return (
-    <section className="section relative overflow-hidden bg-forest text-white grain">
+    <section className="section relative overflow-hidden bg-green-gradient text-white grain">
       <div
         className="pointer-events-none absolute left-1/2 top-1/2 h-[40rem] w-[40rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold/25 blur-[130px]"
         aria-hidden="true"

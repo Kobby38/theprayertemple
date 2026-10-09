@@ -14,7 +14,7 @@ export default function Home() {
     <>
       <Hero />
 
-      <div className="mt-16 md:mt-24">
+      <div>
         <Marquee
           items={[
             { text: "Our vision", tone: "muted" },

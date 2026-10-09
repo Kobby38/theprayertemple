@@ -7,7 +7,7 @@ import { leaders, siteConfig } from "@/lib/data";
 export function Welcome() {
   const pastor = leaders[0];
   return (
-    <section id="welcome" className="section relative scroll-mt-20">
+    <section id="welcome" className="section relative scroll-mt-20 bg-mist">
       <div className="wrap grid gap-16 lg:grid-cols-12">
         <div className="lg:col-span-7">
           <p className="eyebrow">Welcome home</p>
@@ -23,7 +23,7 @@ export function Welcome() {
               believe church should be honest, alive, and practical, a place where doubt is welcome
               and encounters with God are normal.
             </p>
-            <div className="mt-10 flex flex-wrap gap-x-12 gap-y-6 border-t border-gold/30 pt-8">
+            <div className="mt-10 flex flex-wrap gap-x-12 gap-y-6 border-t border-leaf/40 pt-8">
               {siteConfig.serviceTimes.map((s) => (
                 <div key={s.label}>
                   <p className="text-h3">{s.time}</p>
@@ -39,7 +39,7 @@ export function Welcome() {
         </div>
 
         <ScrollReveal delay={0.2} className="lg:col-span-4 lg:col-start-9 lg:pt-4">
-          <div className="relative aspect-[4/5] overflow-hidden rounded-3xl ring-1 ring-gold/30">
+          <div className="relative aspect-[4/5] overflow-hidden rounded-3xl ring-2 ring-leaf/40">
             {pastor.photo && (
               <Image
                 src={pastor.photo}
